@@ -78,7 +78,7 @@ main_function () {
 	echo "g. ${options[6]}"
 	# read input from user
 	read var
-	# check user input
+	# check user input choice validation
 	case $var in
 		"a"|"Add"|"add")
 			result=$(add $1 $2)
@@ -104,15 +104,25 @@ main_function () {
 	esac
 }
 
-
-
 #make an array for the options
 options=("Add" "Subtract" "Multiply" "Divide" "Power-of" "Modulus" "Exit")
 
 #while true; do
-
-# call the main function to start the Calculator.
-main_function $1 $2 $options
+if [[ "$#" -ne "2" ]]; then
+	echo "Error: You Didn't Enter 2 Arguments" >&2 
+        exit 1
+       # check that first number is valid
+elif  [[ ! "$1" =~ $re ]]; then
+	echo "Error, $1 is not a valid number" >&2
+	exit 1
+# check that second number is valid
+elif ! [[ "$2" =~ $re ]]; then
+	echo "Error, $2 is not a valid number" >&2
+	exit 1
+#all good. 
+else
+	#call the main function to start the Calculator.
+	main_function $1 $2 $options
 	
 #sleep 2
 #done
