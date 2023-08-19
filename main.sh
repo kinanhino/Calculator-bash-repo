@@ -151,7 +151,9 @@ echo "g. ${options[6]}"
 # read input from user
 read var
 # check user input choice validation
+
 case $var in
+
 	"a"|"Add"|"add")
 		read -p "Enter first number: " num1
 		check_num_valid $num1
@@ -159,6 +161,7 @@ case $var in
 		check_num_valid $num2
 		result=$(add $num1 $num2)
 		echo $result ;;
+
 	"b"|"Subtract"|"subtract")
 		read -p "Enter first number: " num1
 		check_num_valid $num1
@@ -184,6 +187,26 @@ case $var in
     echo "Result: $result" ;;
 
 
+    "e"|"Power-of")
+    read -p "Enter base number: " num1
+    check_num_valid $num1
+    read -p "Enter exponent: " num2
+    check_num_valid $num2
+    result=$(power_of $num1 $num2)
+    echo "Result: $result"
+    ;;
+
+    "f"|"Modulus")
+    read -p "Enter first number: " num1
+    check_num_valid $num1
+    read -p "Enter second number: " num2
+    check_num_valid $num2
+    result=$(modulus $num1 $num2)
+    echo "Result: $result"
+    ;;
+
+
+
    
 	#### Must add function calls #####
 	"c"|"Multiply")
@@ -195,12 +218,14 @@ case $var in
 	"f"|"Modulus")
 		echo "Modulus";;
 	"g"|"Exit")
-	echo "----************----"
+
+	       echo "----************----"
         echo "----************----"
         echo "----****BYE!****----"
         echo "----************----"
         echo "----************----"
 		exit 1;;
+
 	#### Remove when finished #####
 	*)
 		echo "Not a Valid Option";;
