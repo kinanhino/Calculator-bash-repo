@@ -126,13 +126,24 @@ divide() {
 #make an array for the options
 options=("Add" "Subtract" "Multiply" "Divide" "Power-of" "Modulus" "Exit")
 
+echo "--------------------"
+echo "--Select operation--"
+echo "--------------------"
 echo "a. ${options[0]}"
+echo "--------------------"
 echo "b. ${options[1]}"
+echo "--------------------"
 echo "c. ${options[2]}"
+echo "--------------------"
 echo "d. ${options[3]}"
+echo "--------------------"
 echo "e. ${options[4]}"
+echo "--------------------"
 echo "f. ${options[5]}"
+echo "--------------------"
 echo "g. ${options[6]}"
+
+
 # read input from user
 read var
 # check user input choice validation
