@@ -60,6 +60,8 @@ subtract () {
 
 #### Must add functions here - Multiply, Divide, Modulus, Power-of, is_prime, is_odd_even, is_div_by_five #####
 
+
+
 multiply() {
 # check input validation - 2 positional arguments
 if [[ "$#" -ne "2" ]]; then
@@ -125,6 +127,8 @@ divide() {
 
 #make an array for the options
 options=("Add" "Subtract" "Multiply" "Divide" "Power-of" "Modulus" "Exit")
+
+while :; do
 
 echo "--------------------"
 echo "--Select operation--"
@@ -205,7 +209,8 @@ esac
 
 
 
-#sleep 2
-#done
+sleep 2
+
+done
 
 #add $1 $2
