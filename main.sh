@@ -60,7 +60,26 @@ subtract () {
 
 #### Must add functions here - Multiply, Divide, Modulus, Power-of, is_prime, is_odd_even, is_div_by_five #####
 
-
+multiply() {
+# check input validation - 2 positional arguments
+if [[ "$#" -ne "2" ]]; then
+echo "Error: You Didn't Enter 2 Arguments" >&2
+exit 1
+# check that first number is valid
+elif [[ ! "$1" =~ $re ]]; then
+echo "Error, $1 is not a valid number" >&2
+exit 1
+# check that second number is valid
+elif ! [[ "$2" =~ $re ]]; then
+echo "Error, $2 is not a valid number" >&2
+exit 1
+# all good, make the multiplication calculation.
+else
+let result=$1*$2
+# echo back $result from the function
+echo $result
+fi
+}
 
 
 
