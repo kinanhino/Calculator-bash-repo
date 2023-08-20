@@ -264,12 +264,12 @@ echo_menu () {
 
 
 
-
+# Main start
 
 #make an array for the options
 options=("Add" "Subtract" "Multiply" "Divide" "Power-of" "Modulus" "Exit")
 
-
+result=-9999
 while :; do
 
 
@@ -346,10 +346,11 @@ while :; do
 		*)
 			echo "Not a Valid Option";;
 	esac
-	is_prime $result
-	is_odd_even $result
-	is_divided_by_five $result
-	
+	if (( $result != -9999 )); then
+		is_prime $result
+		is_odd_even $result
+		is_divided_by_five $result
+	fi	
 	echo
 
 	sleep 2
